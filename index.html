@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Shop Academy - Destrave Suas Primeiras Vendas Como Afiliado</title>
+    <style>
+        :root {
+            --primary: #ff0050;
+            --primary-dark: #e00046;
+            --secondary: #00f2ea;
+            --dark: #1a1a1a;
+            --darker: #121212;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --success: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--darker);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 80px 0 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: white;
+        }
+        
+        .highlight {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        
+        /* Sections - com fundos mais claros para melhor contraste */
+        section {
+            padding: 80px 0;
+            background: rgba(40, 40, 40, 0.95);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #cccccc;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+        
+        /* Benefits */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 15px;
+            color: white;
+            font-size: 1.3rem;
+        }
+        
+        .benefit-card p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+        
+        /* Modules */
+        .module-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .module {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .module-header {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .module-header:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .module-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        .module-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .module-content.active {
+            padding: 30px;
+            max-height: 1000px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .module-item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 3px solid var(--primary);
+        }
+        
+        .module-item h4 {
+            margin-bottom: 10px;
+            color: white;
+            font-size: 1.1rem;
+        }
+        
+        .module-item p, .module-item ul, .module-item ol {
+            color: #cccccc;
+            margin-bottom: 10px;
+        }
+        
+        .module-item ul li, .module-item ol li {
+            margin-bottom: 5px;
+            color: #cccccc;
+        }
+        
+        /* Video Section */
+        .video-section {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+        
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: rgba(30, 30, 30, 0.95);
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        
+        .cta-box h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .cta-box p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #eeeeee;
+        }
+        
+        .checklist {
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto 30px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .checklist h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+            text-align: center;
+        }
+        
+        .checklist ul {
+            list-style-type: none;
+        }
+        
+        .checklist li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            color: white;
+        }
+        
+        .checklist li:before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(18, 18, 18, 0.95);
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+        
+        /* Melhorias de tabela */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #cccccc;
+        }
+        
+        tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        blockquote {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-left: 4px solid var(--primary);
+            margin: 20px 0;
+            font-style: italic;
+            color: #cccccc;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-box {
+                padding: 40px 20px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .footer-links a {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">TikTok Shop <span>Academy</span></div>
+                <p class="tagline">Estratégias comprovadas para afiliados da TikTok Shop</p>
+                <h1>Destrave Suas <span class="highlight">Primeiras Vendas</span> Como Afiliado na TikTok Shop</h1>
+                <p style="color: rgba(255,255,255,0.9);">Aprenda o passo a passo para fazer suas primeiras vendas como afiliado, mesmo que você nunca tenha vendido nada online, não tenha seguidores e ainda esteja começando na plataforma.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>O Que Você Vai Aprender</h2>
+                <p>Um método passo a passo para iniciantes conquistarem suas primeiras vendas como afiliados na TikTok Shop</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💡</div>
+                    <h3>Como Funciona o Programa</h3>
+                    <p>Entenda exatamente como o programa de afiliados da TikTok Shop funciona e como você ganha dinheiro sem precisar de estoque ou entrega.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Escolha de Produtos</h3>
+                    <p>Aprenda a identificar produtos baratos, visuais e populares que têm alta probabilidade de vender através dos seus vídeos.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎥</div>
+                    <h3>Criação de Vídeos</h3>
+                    <p>Domine a estrutura de vídeo ideal para afiliados, com ganchos fortes e demonstrações que convertem visualizações em vendas.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Estratégias de Vendas</h3>
+                    <p>Descubra técnicas comprovadas para aumentar seu alcance, engajamento e conversões, mesmo sem seguidores no início.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Acompanhamento de Resultados</h3>
+                    <p>Saiba exatamente onde e como acompanhar suas vendas e comissões, e como ajustar sua estratégia com base nos dados.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛠️</div>
+                    <h3>Ferramentas Essenciais</h3>
+                    <p>Conheça as ferramentas gratuitas e baratas que vão facilitar sua vida na criação de conteúdo e gestão dos seus links.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section class="modules">
+        <div class="container">
+            <div class="section-title">
+                <h2>Conteúdo do Guia Completo</h2>
+                <p>Um roteiro passo a passo para suas primeiras vendas como afiliado na TikTok Shop</p>
+            </div>
+            
+            <div class="module-container">
+                <!-- Módulo 1 -->
+                <div class="module">
+                    <div class="module-header" onclick="toggleModule(1)">
+                        <h3>📘 MÓDULO 1 – Entendendo o Que é Ser Afiliado TikTok Shop</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="module-content" id="module-1">
+                        <div class="module-item">
+                            <h4>🔹 1.1 O que é o programa de afiliados</h4>
+                            <p>É um sistema onde você promove produtos de outras lojas dentro da TikTok Shop e ganha uma comissão por cada venda realizada através do seu link.</p>
+                            <p>Você não precisa de estoque, entrega ou atendimento — o TikTok e o vendedor cuidam de tudo.</p>
+                        </div>
+                        <div class="module-item">
+                            <h4>🔹 1.2 Como funciona na prática</h4>
+                            <ul>
+                                <li>Você se cadastra como afiliado.</li>
+                                <li>Escolhe produtos disponíveis na TikTok Shop.</li>
+                                <li>Cria vídeos ou lives mostrando esses produtos.</li>
+                                <li>Alguém compra através do seu link, e você recebe comissão.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Módulo 2 -->
+                <div class="module">
+                    <div class="module-header" onclick="toggleModule(2)">
+                        <h3>🧰 MÓDULO 2 – Preparando Sua Conta Para Vender</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="module-content" id="module-2">
+                        <div class="module-item">
+                            <h4>🔹 2.1 Crie ou ajuste seu perfil no TikTok</h4>
+                            <p>Seu perfil precisa parecer confiável e temático.</p>
+                            <p><strong>Checklist:</strong></p>
+                            <ul>
+                                <li><strong>Nome:</strong> algo simples e fácil de lembrar. Exemplo: Achadinhos da Helô, Vibes de Compras, Top Dicas BR.</li>
+                                <li><strong>Foto:</strong> rosto real ou logo clara.</li>
+                                <li><strong>Bio:</strong> diga o que você faz. Exemplo: "Te mostro os produtos mais incríveis da TikTok Shop 💡👇"</li>
+                            </ul>
+                        </div>
+                        <div class="module-item">
+                            <h4>🔹 2.2 Ative a TikTok Shop (modo afiliado)</h4>
+                            <ol>
+                                <li>Acesse seller.tiktok.com.</li>
+                                <li>Escolha "Criador/Afiliado".</li>
+                                <li>Conecte sua conta TikTok.</li>
+                                <li>Preencha suas informações básicas.</li>
+                                <li>Vá até "Centro de Afiliados" → "Produtos para promover".</li>
+                            </ol>
+                            <p><em>💡 Você não precisa ter loja — só escolher produtos de outros vendedores.</em></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Módulo 3 -->
+                <div class="module">
+                    <div class="module-header" onclick="toggleModule(3)">
+                        <h3>🔍 MÓDULO 3 – Como Escolher Produtos que Realmente Vendem</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="module-content" id="module-3">
+                        <div class="module-item">
+                            <h4>🔹 3.1 O que buscar</h4>
+                            <p>Procure produtos que sejam:</p>
+                            <ul>
+                                <li>Baratos (até R$100)</li>
+                                <li>Visuais (fáceis de mostrar em vídeo)</li>
+                                <li>Populares (têm bons comentários e alta comissão)</li>
+                            </ul>
+                        </div>
+                        <div class="module-item">
+                            <h4>🔹 3.2 Onde achar produtos bons</h4>
+                            <ul>
+                                <li>No Centro de Afiliados → aba "Mais vendidos"</li>
+                                <li>Pesquisando hashtags no TikTok: #tiktokmademebuyit #achadinhos #testandoprodutos #comprastiktok</li>
+                                <li>Observando o que os criadores do seu nicho estão promovendo.</li>
+                            </ul>
+                        </div>
+                        <div class="module-item">
+                            <h4>🔹 3.3 Regra de ouro</h4>
+                            <p>Escolha 1 ou 2 produtos para focar no início. Domine eles antes de sair testando dezenas.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Módulo 4 -->
+                <div class="module">
+                    <div class="module-header" onclick="toggleModule(4)">
+                        <h3>🎥 MÓDULO 4 – Criando Vídeos que Geram Vendas</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="module-content" id="module-4">
+                        <div class="module-item">
+                            <h4>🔹 4.1 Estrutura de vídeo ideal para afiliado</h4>
+                            <ul>
+                                <li><strong>(0–3s) Gancho forte:</strong> "Você sabia que dá pra resolver isso com R$30?"</li>
+                                <li><strong>(4–10s) Demonstração:</strong> Mostre o produto sendo usado.</li>
+                                <li><strong>(11–20s) Prova:</strong> Mostre o resultado, antes e depois, ou depoimento.</li>
+                                <li><strong>(21–25s) Chamada pra ação:</strong> "Tá com o link aqui na bio 👇"</li>
+                            </ul>
+                        </div>
+                        <div class="module-item">
+                            <h4>🔹 4.2 Tipos de vídeos que funcionam</h4>
+                            <ul>
+                                <li>Testando produtos ("Será que funciona mesmo?")</li>
+                                <li>Comparando ("Esse aqui é melhor que aquele?")</li>
+                                <li>Dicas rápidas ("3 coisas que aprendi usando esse produto")</li>
+                                <li>Reações ("Eu não acreditei quando testei isso!")</li>
+                            </ul>
+                        </div>
+                        <div class="module-item">
+                            <h4>🔹 4.3 Dicas extras</h4>
+                            <ul>
+                                <li>✅ Grave com boa luz (luz natural ou ring light)</li>
+                                <li>✅ Use legendas e música popular</li>
+                                <li>✅ Seja natural — evite parecer um comercial</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Módulo 5 -->
+                <div class="module">
+                    <div class="module-header" onclick="toggleModule(5)">
+                        <h3>💬 MÓDULO 5 – Estratégias Para Destravar Suas Primeiras Vendas</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="module-content" id="module-5">
+                        <div class="module-item">
+                            <h4>🔹 5.1 Poste com consistência</h4>
+                            <ul>
+                                <li>1 vídeo por dia é o ideal</li>
+                                <li>Reaproveite vídeos: mude legenda, ângulo ou formato</li>
+                            </ul>
+                        </div>
+                        <div class="module-item">
+                            <h4>🔹 5.2 Use hashtags certas</h4>
+                            <p>Exemplo: #tiktokshopbrasil #produtosvirais #achadinhos #comprastiktok</p>
+                        </div>
+                        <div class="module-item">
+                            <h4>🔹 5.3 Incentive comentários</h4>
+                            <p>Pergunte: "Quer que eu teste outro produto?" ou "Qual cor vocês escolheriam?"</p>
+                            <p>Quanto mais interação, mais o TikTok entrega seus vídeos.</p>
+                        </div>
+                        <div class="module-item">
+                            <h4>🔹 5.4 Faça lives simples</h4>
+                            <p>Você pode:</p>
+                            <ul>
+                                <li>Mostrar o produto ao vivo</li>
+                                <li>Responder dúvidas</li>
+                                <li>Fixar o link do produto na tela</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Módulo 6 -->
+                <div class="module">
+                    <div class="module-header" onclick="toggleModule(6)">
+                        <h3>📈 MÓDULO 6 – Acompanhando Resultados</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="module-content" id="module-6">
+                        <div class="module-item">
+                            <h4>🔹 6.1 Onde ver as vendas</h4>
+                            <p>Na aba "Comissões" → "Relatórios" dentro do painel de afiliado.</p>
+                        </div>
+                        <div class="module-item">
+                            <h4>🔹 6.2 Analise o que está dando certo</h4>
+                            <p>Observe:</p>
+                            <ul>
+                                <li>Quais vídeos têm mais cliques</li>
+                                <li>Quais produtos estão vendendo mais</li>
+                                <li>Que tipo de conteúdo gera mais comentários</li>
+                            </ul>
+                        </div>
+                        <div class="module-item">
+                            <h4>🔹 6.3 Ajuste rápido</h4>
+                            <ul>
+                                <li>Poucos views → melhore o gancho inicial</li>
+                                <li>Muitos views e poucas vendas → melhore a prova social</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Módulo 7 -->
+                <div class="module">
+                    <div class="module-header" onclick="toggleModule(7)">
+                        <h3>🎁 MÓDULO 7 – Ferramentas que Facilitam Sua Vida</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="module-content" id="module-7">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Categoria</th>
+                                    <th>Ferramenta</th>
+                                    <th>Função</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Edição</td>
+                                    <td>CapCut, InShot</td>
+                                    <td>Editar vídeos com legendas</td>
+                                </tr>
+                                <tr>
+                                    <td>Roteiros</td>
+                                    <td>ChatGPT</td>
+                                    <td>Criar falas e legendas</td>
+                                </tr>
+                                <tr>
+                                    <td>Links</td>
+                                    <td>Beacons, Linktree</td>
+                                    <td>Organizar seus produtos</td>
+                                </tr>
+                                <tr>
+                                    <td>Métricas</td>
+                                    <td>TikTok Analytics</td>
+                                    <td>Ver desempenho dos vídeos</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Módulo 8 -->
+                <div class="module">
+                    <div class="module-header" onclick="toggleModule(8)">
+                        <h3>🚀 MÓDULO 8 – Roteiro Pronto Para Afiliados (exemplo)</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="module-content" id="module-8">
+                        <div class="module-item">
+                            <p>Exemplo de script (para um produto de beleza):</p>
+                            <blockquote>
+                                "Eu testei esse [nome do produto] e juro, não esperava esse resultado 😳<br>
+                                Olha isso (mostra antes e depois).<br>
+                                Tá vendendo por menos de R$50 na TikTok Shop, o link tá aqui embaixo 👇"
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Módulo 9 -->
+                <div class="module">
+                    <div class="module-header" onclick="toggleModule(9)">
+                        <h3>🏁 MÓDULO 9 – Plano de Ação de 7 Dias Para Suas Primeiras Vendas</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="module-content" id="module-9">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Dia</th>
+                                    <th>Tarefa</th>
+                                    <th>Resultado Esperado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Criar perfil e ativar TikTok Shop</td>
+                                    <td>Conta pronta</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Escolher 2 produtos</td>
+                                    <td>Foco definido</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Gravar 2 vídeos</td>
+                                    <td>Primeiros testes</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Postar 1 vídeo e analisar feedback</td>
+                                    <td>Entender engajamento</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Fazer variações do vídeo vencedor</td>
+                                    <td>Melhorar alcance</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Postar 2 vídeos e 1 live curta</td>
+                                    <td>Testar vendas</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Analisar resultados e ajustar</td>
+                                    <td>Primeiras comissões 💰</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Videoaulas Exclusivas</h2>
+                <p style="color: rgba(255,255,255,0.9);">Aprenda com demonstrações práticas de como criar vídeos que convertem</p>
+            </div>
+            
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/IANXZfhz46Y" 
+                            title="TikTok Shop Academy - Destrave Suas Primeiras Vendas Como Afiliado" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Hora de Colocar a Mão na Massa!</h2>
+                <p>A teoria você já tem, agora é hora da ação. Use este checklist gratuito com os 7 passos essenciais para destravar suas primeiras vendas:</p>
+                
+                <div class="checklist">
+                    <h3>Checklist: 7 Passos Para Sua Primeira Venda</h3>
+                    <ul>
+                        <li>Configurar perfil profissional no TikTok</li>
+                        <li>Ativar modo afiliado na TikTok Shop</li>
+                        <li>Escolher 2 produtos estratégicos</li>
+                        <li>Criar 3 vídeos com estrutura comprovada</li>
+                        <li>Publicar com frequência consistente</li>
+                        <li>Interagir com comentários</li>
+                        <li>Analisar métricas e ajustar estratégia</li>
+                    </ul>
+                </div>
+                
+                <p><strong>Lembre-se:</strong> "Afiliado que posta todo dia vende. Afiliado que espera o vídeo perfeito, nunca começa."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">TikTok Shop <span>Academy</span></div>
+            <div class="footer-links">
+                <a href="#">Sobre</a>
+                <a href="#">Depoimentos</a>
+                <a href="#">Contato</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+            </div>
+            <p class="copyright">© 2023 TikTok Shop Academy. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleModule(moduleNumber) {
+            const moduleContent = document.getElementById(`module-${moduleNumber}`);
+            const moduleHeader = moduleContent.previousElementSibling;
+            const toggleIcon = moduleHeader.querySelector('span');
+            
+            if (moduleContent.classList.contains('active')) {
+                moduleContent.classList.remove('active');
+                toggleIcon.textContent = '+';
+            } else {
+                moduleContent.classList.add('active');
+                toggleIcon.textContent = '-';
+            }
+        }
+    </script>
+</body>
+</html>
